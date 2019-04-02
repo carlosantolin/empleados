@@ -3,7 +3,7 @@ package base.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Horario", schema = "tiempo")
+@Table(name="Horario", schema = "gestion")
 public class Horario {
 
     @Id

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page isErrorPage="true" %>
+<%@ page language="java"  contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -17,7 +18,7 @@
 <table cellspacing="5" class="main-table">
 <tr>
 <th>Nombre</th>
-<th>Departmento</th>
+<th>Departamento</th>
 <th>Detalles</th>
 <th>Borrar</th>
 </tr>
@@ -32,7 +33,7 @@
 <!-- 				Esto es necesario para permitir el uso del metodo DELETE a través de HTTP1, -->
 <!-- 																			o eso dicen. -->
 				
-                    <sf:form action="empleados/${emp.id}" method="delete" cssClass="delete">
+                    <sf:form action="empleados/borrar/${emp.id}" method="post" cssClass="delete">
                         <input type="submit" class="delete-button" value="" />
                     </sf:form></td>
 </tr>

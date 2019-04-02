@@ -3,7 +3,7 @@ package base.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Empleado", schema="tiempo")
+@Table(name="Empleado", schema="gestion")
 public class Empleado {
 
 

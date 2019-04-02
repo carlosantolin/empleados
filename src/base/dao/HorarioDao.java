@@ -71,4 +71,13 @@ public class HorarioDao implements InterfazHorarioDao {
         return true;
     }
 
+	@Override
+	public List<Horario> buscarPorEmpleado(long id) {
+		Query q = sessionFactory.getCurrentSession().createQuery("from Horario where empleado_id = :atributo");
+        q.setParameter("atributo", id);
+
+
+        return q.list();
+	}
+
 }

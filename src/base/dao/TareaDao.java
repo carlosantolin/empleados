@@ -50,7 +50,15 @@ public class TareaDao implements InterfazTareaDao {
 
         return q.list();
     }
+    
+    public List buscarPorEmpleado(long id) {
+        Query q = sessionFactory.getCurrentSession().createQuery("select t.id from Tarea t join t.empleadosAsignados r where  r.id = :atributo");
+        q.setParameter("atributo", id);
 
+        	List resultado = q.list();
+
+        return resultado;
+    }
 
     @Override
 	public void actualizar(long id, String descripcion, boolean completada, Jefe jefe,

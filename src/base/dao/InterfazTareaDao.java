@@ -20,4 +20,6 @@ public interface InterfazTareaDao {
 
 	boolean borrar(long id);
 
+	List<Tarea> buscarPorEmpleado(long id);
+
 }

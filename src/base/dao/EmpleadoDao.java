@@ -1,6 +1,8 @@
 package base.dao;
 
 import base.domain.Empleado;
+import base.domain.Tarea;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,11 @@ public class EmpleadoDao implements InterfazEmpleadoDao {
 
     @Autowired
     private SessionFactory sessionFactory;
+    
+    @Autowired
     private InterfazTareaDao tareaDao;
+    
+    @Autowired
     private InterfazHorarioDao horarioDao;
 
 
@@ -66,11 +72,12 @@ public class EmpleadoDao implements InterfazEmpleadoDao {
 	public boolean borrar(long id){
 
         Empleado empleado = sessionFactory.getCurrentSession().get(Empleado.class, id);
-        if(!tareaDao.buscarPorAtributo("empleado_id", empleado.getId()).isEmpty()){ //No asignado a ningua tarea
+        List tareas = tareaDao.buscarPorEmpleado(id);
+        if(!tareas.isEmpty()){ //No asignado a ningua tarea
             return false;
         }
 
-        if(!horarioDao.buscarPorAtributo("empleado_id", empleado.getId()).isEmpty()){//No asignado a horario
+        if(!horarioDao.buscarPorEmpleado(id).isEmpty()){//No asignado a horario
             return false;
         }
 

@@ -20,4 +20,6 @@ public interface InterfazHorarioDao {
 
 	boolean borrar(long id);
 
+	List<Horario> buscarPorEmpleado(long id);
+
 }

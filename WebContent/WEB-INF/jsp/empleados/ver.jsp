@@ -18,8 +18,8 @@
                     <label for="nombre">Nombre:</label>
                     <input name="nombre" id="nombre" value="${empleado.nombre}" disabled="true"/></li>
     <li>
-                    <label for="departmento">Departmento:</label>
-                    <input name="departmento" id="departmento" value="${empleado.departmento}" disabled="true" /></li>
+                    <label for="departamento">Departamento:</label>
+                    <input name="departamento" id="departamento" value="${empleado.departamento}" disabled="true" /></li>
     <li>
                     <input type="button" value="Desbloquear" id="desbloquear" />
                     <input type="submit" value="Guardar" id="guardar" class="hidden" /></li>
@@ -35,7 +35,7 @@
  
                 // enable stuff
                 $("#nombre").removeAttr("disabled");
-                $("#departmento").removeAttr("disabled");
+                $("#departamento").removeAttr("disabled");
                 $("#guardar").removeClass("hidden");
             });
         })();

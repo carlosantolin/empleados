@@ -18,8 +18,8 @@
                     <label for="nombre">Nombre:</label>
                     <input name="nombre" id="nombre" value="${empleado.nombre}"/></li>
     <li>
-                    <label for="departmento">Departamento:</label>
-                    <input name="departmento" id="departmento"
+                    <label for="departamento">Departamento:</label>
+                    <input name="departamento" id="departamento"
                            value="${empleado.departamento}" /></li>
     <li>
                     <input type="submit" value="Guardar" id="guardar" /></li>

@@ -52,6 +52,8 @@ public class SpringAplicacion {
         Tarea tarea = tareaDao.buscarPorAtributo("descripcion", "tarea de prueba").get(0);
 
         horarioDao.persistir(carlos, tarea, 20);
+        
+        System.out.println("probando: " + tareaDao.buscarPorEmpleado(3).isEmpty());
 
         System.out.println("Esta es la tarea mas ocupada" +tareaService.tareaMasOcupada().toString());
         System.out.println("Estas son las tareas de carlos "+ tareaService.tareasDeEmpleado(carlos).toString());

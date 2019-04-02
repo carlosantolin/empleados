@@ -52,7 +52,7 @@ public class EmpleadoControlador {
 		return "redirect:/empleados";
 	}
 	
-	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/borrar/{id}", method = RequestMethod.POST)
 	public String deleteEmpleado(@PathVariable("id") long id) throws ExcepcionBorrarEmpleado{
 		boolean estadoBorrado = empleadoDao.borrar(id);
 		

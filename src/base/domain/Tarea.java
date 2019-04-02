@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Tarea", schema = "tiempo")
+@Table(name = "Tarea", schema = "gestion")
 public class Tarea {
 
     @Id
@@ -13,7 +13,7 @@ public class Tarea {
     private long id;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name="tarea_empleado", schema = "tiempo",
+    @JoinTable(name="tarea_empleado", schema = "gestion",
                 joinColumns = {@JoinColumn(name="tarea_id", referencedColumnName = "id")},
                 inverseJoinColumns = {@JoinColumn(name="empleado_id", referencedColumnName = "id")})
     private List<Empleado> empleadosAsignados = new ArrayList<Empleado>();
