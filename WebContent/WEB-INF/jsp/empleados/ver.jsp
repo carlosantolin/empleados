@@ -21,22 +21,22 @@
                     <label for="departmento">Departmento:</label>
                     <input name="departmento" id="departmento" value="${empleado.departmento}" disabled="true" /></li>
     <li>
-                    <input type="button" value="Desbloquear" id="desbloqueado" />
+                    <input type="button" value="Desbloquear" id="desbloquear" />
                     <input type="submit" value="Guardar" id="guardar" class="hidden" /></li>
 </ul>
 </sf:form></div>
-<a href="../empleados">Go Back</a>
+<a href="../empleados">Ir atrás</a>
  
-    <script src="/timesheet-app/resources/jquery-1.7.1.js"></script>
+    <script src="/gestion/resources/jquery-1.7.1.js"></script>
     <script>
         (function() {
-            $("#unlock").on("click", function() {
-                $("#unlock").addClass("hidden");
+            $("#desbloquear").on("click", function() {
+                $("#desbloquear").addClass("hidden"); //ver estilos.css
  
                 // enable stuff
-                $("#name").removeAttr("disabled");
-                $("#department").removeAttr("disabled");
-                $("#save").removeClass("hidden");
+                $("#nombre").removeAttr("disabled");
+                $("#departmento").removeAttr("disabled");
+                $("#guardar").removeClass("hidden");
             });
         })();
     </script>

@@ -63,6 +63,20 @@ public class EmpleadoControlador {
 		return "redirect:/empleados";
 	}
 	
+	@RequestMapping(params="new", method = RequestMethod.GET)
+	public String crearFormularioEmpleado(Model modelo) {
+		modelo.addAttribute(new Empleado());
+		
+		return "empleados/nuevo";
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String crearEmpleado(Empleado empleado) {
+		empleadoDao.persistir(empleado.getNombre(), empleado.getDepartamento());
+		
+		return "redirect:/empleados";
+	}
+	
 	
 	
 	@ExceptionHandler(ExcepcionBorrarEmpleado.class)

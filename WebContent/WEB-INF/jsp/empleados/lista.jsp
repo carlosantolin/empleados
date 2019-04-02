@@ -37,6 +37,6 @@
                     </sf:form></td>
 </tr>
 </c:forEach></table>
-<a href="bienvenido">Atrás</a>
+<a href="bienvenido">Ir atrás</a>
 </body>
 </html>
