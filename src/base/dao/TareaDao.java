@@ -1,6 +1,7 @@
 package base.dao;
 
 import base.domain.Empleado;
+import base.domain.Horario;
 import base.domain.Jefe;
 import base.domain.Tarea;
 import org.hibernate.Session;
@@ -71,8 +72,10 @@ public class TareaDao implements InterfazTareaDao {
 	public boolean borrar(long id){
 
         Tarea tarea = sessionFactory.getCurrentSession().get(Tarea.class, id);
+        
+        
 
-        if(!horarioDao.buscarPorAtributo("tarea_id", tarea.getId()).isEmpty()){ //No asignada a horario
+        if(horarioDao.buscarPorAtributo("tarea_id", tarea.getId()) != null){ // asignada a horario
             return false;
         }
 

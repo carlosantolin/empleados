@@ -7,7 +7,8 @@
 
     <context:component-scan base-package="base"></context:component-scan>
 
-    <tx:annotation-driven transaction-manager="txManager"></tx:annotation-driven>
+    <tx:annotation-driven proxy-target-class="true"
+     transaction-manager="txManager"></tx:annotation-driven>
 
      <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
