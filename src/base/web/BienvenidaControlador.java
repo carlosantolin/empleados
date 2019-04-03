@@ -25,9 +25,9 @@ public class BienvenidaControlador {
 		return "index";
 	}
 	
-	/*
-	 * @PostConstruct public void prepararDatosFalsos() {
-	 * generadorEntidades.borrar(); generadorEntidades.generar(); }
-	 */
+	
+	  @PostConstruct public void prepararDatosFalsos() {
+	  generadorEntidades.borrar(); generadorEntidades.generar(); }
+	 
 
 }

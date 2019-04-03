@@ -15,6 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 public class SpringAplicacion {
 
@@ -57,5 +58,11 @@ public class SpringAplicacion {
 
         System.out.println("Esta es la tarea mas ocupada" +tareaService.tareaMasOcupada().toString());
         System.out.println("Estas son las tareas de carlos "+ tareaService.tareasDeEmpleado(carlos).toString());
+        
+        List<Tarea> tareas = tareaDao.listar();
+        
+        for(Tarea t: tareas) {
+        	tareaDao.borrar(t.getId());
+        }
     }
 }

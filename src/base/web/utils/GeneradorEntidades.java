@@ -14,19 +14,19 @@ import base.service.TareaService;
 public class GeneradorEntidades {
 	
 	@Autowired
-	InterfazEmpleadoDao empleadoDao;
+	private InterfazEmpleadoDao empleadoDao;
 	
 	@Autowired
-	InterfazJefeDao jefeDao;
+	private InterfazJefeDao jefeDao;
 	
 	@Autowired
-	InterfazTareaDao tareaDao;
+	private InterfazTareaDao tareaDao;
 	
 	@Autowired
-	InterfazHorarioDao horarioDao;
+	private InterfazHorarioDao horarioDao;
 	
 	@Autowired
-	TareaService tareaService;
+	private TareaService tareaService;
 
 	
 	public void generar() {
@@ -98,5 +98,5 @@ public class GeneradorEntidades {
 		for(Empleado e: empleado) {
 			empleadoDao.borrar(e.getId());
 		}
-	}
+	} 
 }

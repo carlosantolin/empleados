@@ -20,6 +20,8 @@ public class TareaDao implements InterfazTareaDao {
 
     @Autowired
     private SessionFactory sessionFactory;
+    
+    @Autowired
     private InterfazHorarioDao horarioDao;
 
 
@@ -52,7 +54,7 @@ public class TareaDao implements InterfazTareaDao {
     }
     
     public List buscarPorEmpleado(long id) {
-        Query q = sessionFactory.getCurrentSession().createQuery("select t.id from Tarea t join t.empleadosAsignados r where  r.id = :atributo");
+        Query q = sessionFactory.getCurrentSession().createQuery("select t.id from Tarea t join t.empleadosAsignados r where  r.id = :atributo and r.id = t.id");
         q.setParameter("atributo", id);
 
         	List resultado = q.list();
@@ -86,6 +88,11 @@ public class TareaDao implements InterfazTareaDao {
         if(horarioDao.buscarPorAtributo("tarea_id", tarea.getId()) != null){ // asignada a horario
             return false;
         }
+        
+        //borramos de la tabla asociada
+        Query q = sessionFactory.getCurrentSession().createQuery("delete from tarea_empleado where tarea_id = :atributo");
+        q.setParameter("atributo", tarea.getId());
+        q.executeUpdate();
 
         sessionFactory.getCurrentSession().delete(tarea);
         return  true;

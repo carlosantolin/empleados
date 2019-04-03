@@ -18,6 +18,8 @@ public class JefeDao implements InterfazJefeDao {
 
     @Autowired
     private SessionFactory sessionFactory;
+    
+    @Autowired
     private InterfazTareaDao tareaDao;
 
 

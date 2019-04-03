@@ -80,6 +80,11 @@ public class EmpleadoDao implements InterfazEmpleadoDao {
         if(!horarioDao.buscarPorEmpleado(id).isEmpty()){//No asignado a horario
             return false;
         }
+        
+      //borramos de la tabla asociada
+        Query q = sessionFactory.getCurrentSession().createNativeQuery("delete from gestion.tarea_empleado where empleado_id = ?1");
+        q.setParameter(1, empleado.getId());
+        q.executeUpdate();
 
         sessionFactory.getCurrentSession().delete(empleado);
         return true;

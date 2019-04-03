@@ -1,6 +1,9 @@
 package base.domain;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.Cascade;
+
 import java.util.ArrayList;
 import java.util.List;
 
