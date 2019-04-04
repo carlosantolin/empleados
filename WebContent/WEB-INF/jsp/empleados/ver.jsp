@@ -27,7 +27,7 @@
 </sf:form></div>
 <a href="../empleados">Ir atrás</a>
  
-    <script src="/gestion/resources/jquery-1.7.1.js"></script>
+    <script src="/gestion/resources/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script>
         (function() {
             $("#desbloquear").on("click", function() {

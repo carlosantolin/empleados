@@ -90,8 +90,8 @@ public class TareaDao implements InterfazTareaDao {
         }
         
         //borramos de la tabla asociada
-        Query q = sessionFactory.getCurrentSession().createQuery("delete from tarea_empleado where tarea_id = :atributo");
-        q.setParameter("atributo", tarea.getId());
+        Query q = sessionFactory.getCurrentSession().createNativeQuery("delete from tarea_empleado where tarea_id = ?1");
+        q.setParameter(1, tarea.getId());
         q.executeUpdate();
 
         sessionFactory.getCurrentSession().delete(tarea);
