@@ -63,7 +63,7 @@ public class EmpleadoControlador {
 		return "redirect:/empleados";
 	}
 	
-	@RequestMapping(params="new", method = RequestMethod.GET)
+	@RequestMapping(params="nuevo", method = RequestMethod.GET)
 	public String crearFormularioEmpleado(Model modelo) {
 		modelo.addAttribute(new Empleado());
 		
