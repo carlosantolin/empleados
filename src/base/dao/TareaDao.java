@@ -54,8 +54,8 @@ public class TareaDao implements InterfazTareaDao {
     }
     
     public List buscarPorEmpleado(long id) {
-        Query q = sessionFactory.getCurrentSession().createQuery("select t.id from Tarea t join t.empleadosAsignados r where  r.id = :atributo and r.id = t.id");
-        q.setParameter("atributo", id);
+        Query q = sessionFactory.getCurrentSession().createNativeQuery("select tarea_id from tarea_empleado where empleado_id = ?1");
+        q.setParameter(1, id);
 
         	List resultado = q.list();
 
@@ -85,7 +85,7 @@ public class TareaDao implements InterfazTareaDao {
         
         
 
-        if(horarioDao.buscarPorAtributo("tarea_id", tarea.getId()) != null){ // asignada a horario
+        if(!horarioDao.buscarPorAtributo("tarea_id", tarea.getId()).isEmpty()){ // asignada a horario
             return false;
         }
         
