@@ -1,6 +1,6 @@
 package base.web.excepciones;
 
-public class ExcepcionBorrarEmpleado extends Exception {
+public class ExcepcionBorrarJefe extends Exception {
 	
 	/**
 	 * 
@@ -8,7 +8,7 @@ public class ExcepcionBorrarEmpleado extends Exception {
 	private static final long serialVersionUID = 1L;
 	private long id;
 	
-	public ExcepcionBorrarEmpleado(long id) {
+	public ExcepcionBorrarJefe(long id) {
 		this.id = id;
 	}
 	

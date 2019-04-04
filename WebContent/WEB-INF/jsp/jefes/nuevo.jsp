@@ -6,25 +6,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Nuevo Empleado</title>
+<title>Nuevo Jefe</title>
         <link rel="stylesheet" href="/gestion/resources/estilos.css" type="text/css">
 </head>
 <body>
-<h2>Añade un nuevo empleado</h2>
+<h2>Añade un nuevo jefe</h2>
 <div id="list">
-        <sf:form method="post" action="empleados">
+        <sf:form method="post" action="jefes">
 <ul>
     <li>
                     <label for="nombre">Nombre:</label>
-                    <input name="nombre" id="nombre" value="${empleado.nombre}"/></li>
-    <li>
-                    <label for="departamento">Departamento:</label>
-                    <input name="departamento" id="departamento"
-                           value="${empleado.departamento}" /></li>
+                    <input name="nombre" id="nombre" value="${jefe.nombre}"/></li>
+
     <li>
                     <input type="submit" value="Guardar" id="guardar" /></li>
 </ul>
 </sf:form></div>
-<a href="empleados">Ir atrás</a>
+<a href="jefes">Ir atrás</a>
 </body>
 </html>
